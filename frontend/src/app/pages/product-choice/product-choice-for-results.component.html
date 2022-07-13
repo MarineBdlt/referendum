@@ -1,0 +1,18 @@
+<div class="app-box">
+  <div class="content-box">
+    <h1 class="titre-page">Résultat des votes</h1>
+    <p class="p-title">Sélectionner le produit ci-dessous</p>
+  </div>
+  <div class="product-box" *ngIf="product_id.length != 0">
+    <ng-container *ngFor="let id of product_id">
+      <div class="choice-box" *ngIf="id['product_id'] == 1 ">
+        <div class="image-product"> <a href="/opsreadyResult"> <img src="../../../assets/images/logo_opsready.png" alt="Logo OPSReady"/></a>  </div>
+        <p class="image-title">OPSReady</p>
+      </div>
+      <div class="choice-box" *ngIf="id['product_id'] == 2 ">
+        <div class="image-product"> <a href="/opteamResult"> <img src="../../../assets/images/logo_opteam.svg" alt="Logo OPTeam"/></a> </div>
+        <p class="image-title">OPTeam</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

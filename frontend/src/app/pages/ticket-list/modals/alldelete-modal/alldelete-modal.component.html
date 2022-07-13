@@ -1,0 +1,13 @@
+<div id="modal-content">
+    <h2>Etes-vous sûr de vouloir tout supprimer ? <br>
+        Cette action est irréversible </h2>
+  
+    <!--<ul class="bg-light-grey" *ngFor="let ticket of ticket">
+      <li *ngIf="ticket.checked">n°{{ ticket.number_id }} - {{ ticket.title }}</li>
+    </ul>-->
+
+    <div class="btn">
+      <button (click)="closeModalService()">Non</button>
+      <button (click)="multipleDelete()">Oui</button>
+    </div>
+</div>

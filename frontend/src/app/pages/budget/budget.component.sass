@@ -1,0 +1,139 @@
+@import "../../../sass_utils/variables"
+
+:host
+    width: 100%
+    color: #7B7B7B
+
+// Text & spacing
+body
+    background: #F5F5F5
+h2
+    display: inline-block
+    margin-top: 60px
+    margin-left: 182px
+    color: $dark-blue
+thead
+    background: $dark-blue
+    color: $white
+    width: 100%
+tbody
+    width: 100%
+tr
+    width: 100%
+td
+    padding: 1em
+tr:nth-child(odd)
+    background: #E8E8E8
+tr:nth-child(even)
+    background: #F1F1F1
+span
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    margin: auto
+#title-list
+    cursor: pointer
+    font-size: 12px
+    margin: 15px
+    margin-left: 10px
+    margin-right: 10px
+    font-size: 12px
+    max-width: 300px
+.title-credit
+    text-decoration: underline
+    color: $dark-blue
+#number-list
+    width: 3.125em
+    min-width: 3.125em
+    font-size: 12px
+    cursor: pointer
+#complexity-list
+    margin-right: 17px
+.number-complexity
+    display: flex
+    margin-top: 20px
+#date-list
+    font-size: 12px
+span
+    margin-right: 3px
+    font-size: 12px
+//Blocs et contenants
+.container-table
+    max-height: 600px
+    margin-top: 50px
+    width: 100%
+    height: 500px
+table
+    width: 100%
+    border-collapse: separate
+th
+    height: 60px
+    padding: 2em
+// input
+input
+    @include input
+    width: 178px
+    height: 40px
+.checkbox
+    margin-left: 12px
+    margin-right: 12px
+#checkbox-head
+    width: 20px
+    height: 20px
+.info-left
+    white-space: nowrap
+.info-right
+    white-space: nowrap
+.info-center
+    white-space: nowrap
+
+button
+    border: none
+    border-radius: 10px
+    font-size: 16px
+    text-align: center
+    margin-top: 33px
+    float: right
+    background-color: $red
+    width: 198px
+    height: 40px
+    color: white
+
+.confirm
+    left: 50%
+    width: 40vw
+    //background: yellow
+    //margin-top: 3em
+    font-size: 22px
+    //border: solid 2px green
+
+.app-box
+  display: flex
+
+.content-box
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  padding-left: 117px
+  padding-right: 117px
+  margin-left: 6em
+
+.content-alert
+    font-size: 22px
+    width: 40vw
+    margin: 0 auto
+
+.input
+  border: solid
+  border-width: thin
+  border-color : $dark-blue
+  background-color : #B5BCC4
+  color: white
+  font-weight: medium
+
+
+td
+  width: 20%
+
+content
+  text-transform: capitalize

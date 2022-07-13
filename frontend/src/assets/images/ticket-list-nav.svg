@@ -1,0 +1,15 @@
+<svg id="ticket-alt-2" data-name="ticket-alt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72.5" height="48.334" viewBox="0 0 72.5 48.334">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="ticket-alt" d="M6.041,48.334A6.042,6.042,0,0,1,0,42.293V30.208a6.042,6.042,0,0,0,6.041-6.041A6.042,6.042,0,0,0,0,18.126V6.041A6.042,6.042,0,0,1,6.041,0H66.457A6.042,6.042,0,0,1,72.5,6.041V18.126a6.041,6.041,0,1,0,0,12.082V42.293a6.042,6.042,0,0,1-6.044,6.041Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_225" data-name="Groupe 225">
+    <path id="ticket-alt-3" data-name="ticket-alt" d="M6.041,48.334A6.042,6.042,0,0,1,0,42.293V30.208a6.042,6.042,0,0,0,6.041-6.041A6.042,6.042,0,0,0,0,18.126V6.041A6.042,6.042,0,0,1,6.041,0H66.457A6.042,6.042,0,0,1,72.5,6.041V18.126a6.041,6.041,0,1,0,0,12.082V42.293a6.042,6.042,0,0,1-6.044,6.041Z" fill="none"/>
+    <g id="Groupe_de_masques_225" data-name="Groupe de masques 225" clip-path="url(#clip-path)">
+      <g id="_color" data-name="🎨 color" transform="translate(0 -12.083)">
+        <rect id="Color" width="72.499" height="72.499" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

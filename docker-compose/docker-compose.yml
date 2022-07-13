@@ -1,0 +1,75 @@
+version: '3.3'
+
+networks:
+  jurassic-net:
+    name: ${NETWORK}
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1450
+
+volumes:
+  jurassic-db-data:
+    name: ${DB_VOLUME_NAME}
+
+services:
+
+  database:
+    image: postgres:${DB_IMAGE_TAG}
+    restart: ${RESTART_POLICY}
+    hostname: jurassic-db
+    container_name: ${APP_CONTAINER_NAME}-db
+    environment:
+      POSTGRES_PASSWORD: ${JURASSIC_DB_PASSWORD}
+      POSTGRES_USER: ${JURASSIC_DB_USER}
+      POSTGRES_DB: ${JURASSIC_DB_NAME}
+      PGUSER: ${PGUSER}
+    volumes:
+      - jurassic-db-data:/var/lib/postgresql/data
+    networks:
+      - jurassic-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 2s
+      timeout: 5s
+      retries: 25
+
+  backend:
+    build:
+        context: ../backend
+        dockerfile: Dockerfile
+        args:
+          PYTHON_SLIM_IMAGE_TAG: ${PYTHON_SLIM_IMAGE_TAG}
+    image: ${REGISTRY}jurassic-backend:${JURASSIC_TAG}
+    hostname: jurassic-backend
+    container_name: ${APP_CONTAINER_NAME}-backend
+    environment:
+      JURASSIC_DB_PASSWORD: ${JURASSIC_DB_PASSWORD}
+      JURASSIC_DB_USER: ${JURASSIC_DB_USER}
+      JURASSIC_DB_NAME: ${JURASSIC_DB_NAME}
+      JURASSIC_DB_PORT: ${JURASSIC_DB_PORT}
+      JURASSIC_DB_HOST: jurassic-db
+      PGUSER: ${PGUSER}
+    restart: ${RESTART_POLICY}
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - jurassic-net
+
+  frontend:
+    build:
+        context: ../frontend
+        dockerfile: Dockerfile
+        args:
+          NGINX_IMAGE_TAG: ${NGINX_IMAGE_TAG}
+          NODE_IMAGE_TAG: ${NODE_IMAGE_TAG}
+    image: ${REGISTRY}jurassic-frontend:${JURASSIC_TAG}
+    hostname: jurassic-frontend
+    container_name: ${APP_CONTAINER_NAME}-frontend
+    ports:
+      - ${HOST_PORT}:80
+    restart: ${RESTART_POLICY}
+    depends_on:
+      - backend
+    networks:
+      - jurassic-net

@@ -1,0 +1,34 @@
+
+<div class="app-box" xmlns="http://www.w3.org/1999/html">
+  <div class="image-background"><span id="logo-title"><img id="logo" src="../../../assets/images/logo-aum.svg"/><h1 id="title">Referend'AUM</h1></span><img id="img-bg" alt="BackGround" src="../../../assets/images/BackGround.png"/></div>
+  <div class="content-box">
+    <div class="">
+      <h2>Se connecter au Referend'AUM</h2>
+      <p>Entrez votre identifiant et mot de passe ci-dessous </p>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input placeholder="Email ou nom d'utilisateur" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <ng-container *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <ng-container *ngIf="f.username.errors.required"> <span class="invalid-feedback"> L'email ou le nom d'utilisateur est requis. </span></ng-container>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <input placeholder="Password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <ng-container *ngIf="submitted && f.password.errors" >
+            <ng-container *ngIf="f.password.errors.required"> <span class="invalid-feedback"> Le mot de passe est requis. </span></ng-container>
+          </ng-container>
+        </div>
+        <span>{{message}}</span>
+        <div class="message-new-password">
+          <!-- <a class="text-dark-blue" routerLink="./forget-password"> J'ai perdu mon mot de passe. </a> -->
+        </div>
+        <div class="form-group form-button">
+          <button [disabled]="loading" class="btn btn-primary" type="submit">
+                    Se connecter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,90 @@
+<div class="app-box">
+  <!-- <app-navbar></app-navbar> -->
+  <div class="content-box">
+    <div class="add-tickets">
+      <h2 class="titre-page" >Création d'un nouveau ticket</h2>
+      <form [formGroup]="formcreation">
+        <div>
+          <label for="title">Titre du ticket</label>
+          <input type="text" formControlName="title" [(ngModel)]="title" placeholder="Titre du ticket"
+            [ngClass]="{'border-error' : error == true}"><br>
+        </div>
+        <div class="div-input-number">
+          <label for="number">Numéro du ticket</label>
+          <input type="text" formControlName="number_id" [(ngModel)]="number_id">
+          <p class="label-number">Numéro</p>
+        </div>
+        <div class="d-flex align-items-start div-description">
+          <label for="content" class="label-description">Description du ticket</label>
+          <textarea formControlName="content" [(ngModel)]="content" placeholder="Description du ticket"
+            class="input-description" [ngClass]="{'border-error' : error == true}" name="Text1" cols="40"
+            rows="5"></textarea>
+        </div>
+        <div class="btn-container d-flex align-items-start">
+          <label for="complexity">Complexité du ticket</label>
+          <button (click)="valueComplexitySelected(1)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" class="circle ticket-easy-1"
+            [ngClass]="{'circle-filter' : complexityOne === false}">1</button>
+          <button (click)="valueComplexitySelected(2)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=2 class="circle ticket-easy-2"
+            [ngClass]="{'circle-filter' : complexityTwo === false}">2</button>
+          <button (click)="valueComplexitySelected(3)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=3 class="circle ticket-medium-3"
+            [ngClass]="{'circle-filter' : complexityThree === false}">3</button>
+          <button (click)="valueComplexitySelected(5)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=5 class="circle ticket-medium-5"
+            [ngClass]="{'circle-filter' : complexityFive === false}">5</button>
+          <button (click)="valueComplexitySelected(8)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=8 class="circle ticket-hard-8"
+            [ngClass]="{'circle-filter' : complexityEight === false}">8</button>
+          <button (click)="valueComplexitySelected(13)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=13 class="circle ticket-hard-13"
+            [ngClass]="{'circle-filter' : complexityThirteen === false}">13</button>
+          <button (click)="valueComplexitySelected(0)" formControlName="complexity" [(ngModel)]="complexity"
+            ngDefaultControl="complexity" value=0 class="circle ticket-nr"
+            [ngClass]="{'circle-filter' : complexityZero === false}">NR</button>
+        </div>
+        <div class="d-flex align-items-start div-description">
+          <label>Filtre</label>
+          <div class="dropdown">
+            <div class="div-dropdown-product">
+              <button *ngIf="textProductDefaut" class="btn-dropdown-product">Selectionner un choix<img
+                  class="Fleche-rouge-bas arrow" id="btn-product-img" src="assets/images/red-arrow.svg"
+                  alt="fleche"></button>
+              <!-- see product selected -->
+              <button *ngIf="changeTextProduct" class="btn-dropdown-product">{{productSelected}} : {{name}}<img
+                  class="Fleche-rouge-bas arrow" src="assets/images/red-arrow.svg" alt="fleche"></button>
+              <label class="label-product">Produit</label>
+            </div>
+            <div class="dropdown-content content-product" formControlName="product_id" [(ngModel)]="product_id"
+              ngDefaultControl="product_id">
+              <p *ngFor="let product of products">
+                <a (click)="clickProduct(product.product_id, product.name)">{{product.name}}</a>
+              </p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <div class="div-dropdown-depends-of">
+              <button *ngIf="textParentDefaut" class="btn-dropdown-parent me-4">Selectionner un choix <img class="arrow"
+                  src="assets/images/red-arrow.svg" alt="fleche"></button>
+              <label class="label-depends-of">Parent</label>
+              <!-- see depends of selected -->
+              <button *ngIf="changeTextParent" class="btn-dropdown-parent me-4">Le ticket: {{title}} dépend du n° :
+                {{depends_of}} <img class="arrow" src="assets/images/red-arrow.svg" alt="fleche"></button>
+            </div>
+            <div class="dropdown-content content-depends-of" formControlName="depends_of" [(ngModel)]="depends_of"
+              ngDefaultControl="depends_of">
+              <p>
+                <a (click)="clickDependsOf(ticket.number_id)" class="d-flex" *ngFor="let ticket of tickets">
+                  {{ticket.number_id}} - {{ticket.title}}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="div-submit">
+          <button (click)="submit()" class="submit">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

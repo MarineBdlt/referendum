@@ -1,0 +1,151 @@
+<div class="app-box">
+  <!-- <app-navbar></app-navbar> -->
+  <div class="content-box">
+    <h2 class="titre-page">Liste des tickets</h2>
+    <div class="container-table">
+      <table>
+        <thead>
+          <th colspan=4>
+            <div id="div-checkbox-all">
+
+          <input type="checkbox"
+          [checked]="isAllChecked"
+          (click)="selectAll()">
+
+          <span id="text-selection">Tout selectionner</span>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-filter">
+            <button class="btn-dropdown-filter">
+            <img class="img-filter" src="assets/images/filter.svg" alt="filtrer">
+            <span>Filtrer</span>
+            <img class="arrow" src="assets/images/red-arrow.svg" alt="fleche"></button>
+            <!-- see filter of selected -->
+          </div>
+          <form class="dropdown-content">
+            <p>
+              <a class="d-flex" (click)="filterBy('archived')">Archivé</a>
+            </p>
+            <p>
+              <a class="d-flex" (click)="filterBy('restored')">Non-archivé</a>
+            </p>
+            <p>
+              <a class="d-flex" (click)="filterBy('opteam')">Opteam</a>
+            </p>
+            <p>
+              <a class="d-flex" (click)="filterBy('opsready')">OPSReady</a>
+            </p>
+            <p>
+              <a class="d-flex" (click)="filterBy('date')">Date</a>
+            </p>
+            <p>
+              <a class="d-flex" (click)="filterBy('complexity')">Complexité</a>
+            </p>
+          </form>
+        </div>
+      </th>
+      <th class="table-title-buttons">
+        <button class="archive-restore" (click)="openAllrestoreModalService(allrestoreTemplate, tickets)">
+          <img class="icone" src="assets/images/desarchiver.svg" alt="desarchiver"><span>Restaurer</span>
+        </button>
+        <ng-template #allrestoreTemplate>
+          <app-allrestore-modal [ticket]="tickets" ></app-allrestore-modal>
+        </ng-template>
+
+        <button class="archive-restore" (click)="openAllarchiveModalService(allarchiveTemplate, tickets)">
+          <img class="icone" src="assets/images/archiver.svg" alt="archiver"><span>Archiver</span>
+        </button>
+        <ng-template #allarchiveTemplate>
+          <app-allarchive-modal [ticket]="tickets" ></app-allarchive-modal>
+        </ng-template>
+
+
+
+        <button class="archive-restore" (click)="openAlldeleteModalService(alldeleteTemplate, tickets)">
+          <img class="icone" src="assets/images/trash-restore.svg" alt="supprimer"><span>Supprimer</span>
+        </button>
+        <ng-template #alldeleteTemplate>
+          <app-alldelete-modal [ticket]="tickets" ></app-alldelete-modal>
+        </ng-template>
+
+
+
+      </th>
+    </thead>
+    <tbody>
+      <tr class="bg-light-grey" *ngFor="let ticket of tickets">
+
+
+        <td style="max-width: 3em;">
+          <input
+          type="checkbox"
+          [checked]="ticket.checked"
+          class="checkbox"
+          (change)="checkboxValue(ticket)" >
+        </td>
+
+
+        <td class="number-complexity" style="max-width: 5em; font-size: 12px">
+          <span (click)="openModalService(template, ticket)" id="number-list" >{{ticket.number_id}}</span>
+          <ng-template #template>
+            <app-modal [ticket]="ticket"></app-modal>
+          </ng-template>
+          <app-ticket-circle [ticket]="ticket" id="complexity-list"></app-ticket-circle>
+        </td>
+
+
+
+
+        <td style="width:100%">
+          <span (click)="openModalService(template, ticket)" id="title-list">
+            {{ticket.title[0].toUpperCase() + ticket.title.slice(1)}}
+          </span>
+        </td>
+
+
+
+        <td class="info-right">
+          <span id="date-list">
+            {{ticket.creation_date | date:"d-MM-y"}}
+          </span>
+          <span id="product-list">
+            {{ticket.product.name | titlecase }}
+          </span>
+        </td>
+
+        <td class="buttons-right">
+
+          <button class="btn-icone-list btn-delete" (click)="openDeleteModalService(deleteTemplate, ticket)">
+            <img class="img-delete" src="assets/images/trash-restore.svg" alt="tout supprimer"></button>
+          <ng-template #deleteTemplate>
+            <app-delete-modal [ticket]="ticket"></app-delete-modal>
+          </ng-template>
+
+
+          <button class="btn-icone-list btn-edit" (click)="openEditModalService(editTemplate, ticket)" id="edit"><img class="img-edit" src="assets/images/edit.svg" alt="edit"></button>
+          <ng-template #editTemplate>
+            <app-edit-ticket [ticket]="ticket"></app-edit-ticket>
+          </ng-template>
+
+              <!--If archived is false, display the button to archived the ticket-->
+              <button class="archive-button-list" *ngIf="!ticket.archived;else archivedTrue;"
+                (click)="openArchiveModalService(archiveTemplate, ticket)">Archiver</button>
+              <ng-template #archiveTemplate>
+                <app-archive-modal [ticket]="ticket"></app-archive-modal>
+              </ng-template>
+
+              <ng-template #archivedTrue>
+                <!--Else's beacon of if else, it display the second button-->
+                <button class="restore-button-list"
+                  (click)="openRestoreModalService(restoreTemplate, ticket)">Restaurer</button>
+                <ng-template #restoreTemplate>
+                  <app-restore-modal [ticket]="ticket"></app-restore-modal>
+                </ng-template>
+              </ng-template>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

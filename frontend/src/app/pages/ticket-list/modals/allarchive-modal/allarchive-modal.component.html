@@ -1,0 +1,19 @@
+<div id="modal-content">
+
+    <tbody>   
+        <div class="ticket-details-content">
+          <h2>Etes-vous sûr de vouloir archiver ces tickets ? </h2>
+  
+          <tr class="bg-light-grey" *ngFor="let ticket of ticket">
+
+              <li *ngIf="ticket.checked">{{ ticket.title }}</li>
+
+          <tr>
+        </div>
+          <button (click)="closeModalService()">Non</button>
+        <div>
+          <button (click)="multipleArchive()">Oui</button>
+        </div>
+    </tbody>
+  </div>
+  

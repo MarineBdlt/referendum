@@ -1,0 +1,12 @@
+<div id="modal-content">
+  <div id="modal-header">
+    <h4>Restaurer</h4>
+    <p>Ticket n° {{ticket.number_id}}</p>
+  </div>
+  <div class="ticket-details-content">
+    <br>
+    <div id="title-details">
+      <p>Souhaitez vous restaurer le ticket : <br><br> {{ticket.title[0].toUpperCase() + ticket.title.slice(1)}} ?</p>
+    </div><br><br>
+    <button (click)="closeModalService()">Non</button>
+    <button (click)="restoreTicket(ticket.number_id)">Oui</button>

@@ -1,0 +1,81 @@
+<div class="app-box">
+  <div class="content-box">
+    <div class="navigation-back">
+      <a href="/productChoice"> <img class="go-back" src="../../../assets/images/go-back.svg" alt="flèche navigation retour"> </a>
+    </div>
+    <div class="title row">
+      <div class="d-flex justify-content-between">
+        <div class="title-box" *ngIf="route.snapshot.params.id == 2">
+          <h1 id="title-page">Vote OPTeam </h1>
+          <img class="logo" src="../../../assets/images/logo_opteam.png"/>
+        </div>
+        <div class="title-box" *ngIf="route.snapshot.params.id == 1">
+          <h1 id="title-page">Vote OPSReady </h1>
+          <img class="logo" src="../../../assets/images/logo_opsready.png" height="202" width="240"/>
+        </div>
+        <p class="title-credit" ><span>Crédits globaux :</span><span > {{ totalBudget }} crédits </span></p>
+        <p class="title-credit"><span>Crédits utilisés :</span><span > {{ budgetUsed }} crédits</span></p>
+        <p class="title-credit"><span>Crédits restants :</span><span > {{ totalBudget - budgetUsed }} crédits</span></p>
+      </div>
+    </div>
+    <div class="contain">
+    <div class="container-table">
+      <div class="content-alert">
+        <ng-template #votesuccessTemplate>
+          <app-votesuccess-modal></app-votesuccess-modal>
+        </ng-template>
+        <ng-template #budgetexceededTemplate>
+          <app-budgetexceeded-modal></app-budgetexceeded-modal>
+        </ng-template>
+      </div>
+    <div class="scroll_table">
+      <table>
+        <thead>
+          <th>
+            N°
+          </th>
+          <th>
+            COMPLEXITE
+          </th>
+          <th class="text-center">
+            TITRE TICKET
+          </th>
+          <th class="date" >
+            DATE
+          </th>
+          <th colspan="2" class="text-center">
+            BUDGET
+          </th>
+        </thead>
+        <tbody>
+          <tr class="bg-light-grey" *ngFor="let ticket of tickets">
+            <td id="ticket_number" class="text-center">
+              <span (click)="openModalService(template, ticket)" id="number-list">{{ticket.number_id}}</span>
+            </td>
+            <td>
+              <ng-template #template>
+                <app-modal [ticket]="ticket"></app-modal>
+              </ng-template>
+              <app-ticket-circle [ticket]="ticket" class="complexity-circle"></app-ticket-circle>
+            </td>
+            <td style="width:100%" >
+              <span  (click)="openModalService(template, ticket)" id="title-list">
+                {{ticket.title[0].toUpperCase() + ticket.title.slice(1)}}
+              </span>
+            </td>
+            <td>
+              <span id="date-list">
+                {{ticket.creation_date | date:"dd-MM-y"}}
+              </span>
+            </td>
+            <td class="d-flex align-self-center">
+              <input type="number" [(ngModel)]="ticket.vote.amount" placeholder="Montant" (change)="updateBudgetUsed($event)">
+              <p class="ms-2 mb-0"> Crédits </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="button-voter" (click)="addVote()">Voter</button>
+  </div>
+</div>

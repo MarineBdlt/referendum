@@ -1,0 +1,102 @@
+/* ------------------------ Colors ------------------------ */
+$blue-font: #1B6ABF
+$dark-blue:#071c33
+$dark-shadow: #000
+$white: #fff
+$white_bg: #f5f5f5
+$red: #e9505a
+$text-grey: #a6a6a6
+$arrow: #6f6f6f
+$btn-bg-grey:#A6A6A6
+$textInput: #919191
+$purpul-Opteam-Color:#A74A96
+$yellow-Opsreadu-Color:#F9AF00
+$progress-bar-bg: #E6E6E6
+$table-odd-row:#E8E8E8
+$table-even-row:#F1F1F1
+$bg-modal: rgba(7, 28, 51, 0.8)
+
+/* ------------------------- Button ------------------------*/
+@mixin submit-btn
+    background-color: $red
+    color: $white
+    @include rectangle-btn
+
+@mixin rectangle-btn
+    border-radius: 10px
+    height: 40px
+    font-size: 1.2em
+    border: none
+    text-align: center
+
+$marginAddTicket: 4%
+$paddingAddTicket: 15px
+$arrondiAddTicket: 28px
+$fontsizeAddTicket: 1em
+
+@mixin circle
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    text-align: center
+    font-size: 15px
+    padding: 3px
+    height: 31px
+    width: 31px
+    color: $white
+    border: none
+
+$btn-border-radius: 10px
+$btn-complexity-1: #04A632
+$btn-complexity-2: #83B206
+$btn-complexity-3: #CEB800
+$btn-complexity-5: #F0A50C
+$btn-complexity-8: #FF842F
+$btn-complexity-13: #EF4657
+$btn-complexity-nr: #A6A6A6
+/* ------------------------ Icone -------------------------*/
+@mixin icone
+    height: 24px
+    width: 24px
+/* ------------------------ Input -------------------------*/
+@mixin input
+    width: 300px
+    height: 40px
+    background-color: $white
+    border-radius: 0.5em
+    box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+    text-indent: 10px
+
+/* ------------------------ TXT -------------------------*/
+@mixin input-placeholder
+    ::-moz-placeholder
+        margin-left: 1em
+        font-size: 12px
+/* ------------------------ Titre -------------------------*/
+.titre-page
+    position: relative
+    font-size: 2em
+    color: $dark-blue
+    margin: 7.2% 0% 0% 10%
+    font-weight: 500
+/* ------------------------ Modal -------------------------*/
+#modal-header
+    padding: 1.2em      
+    display: flex
+    font-weight: bold
+    justify-content: space-between
+    background-color: $dark-blue
+    color: white
+    border-radius: 28px 28px 0px 0px
+
+::ng-deep .modal-content
+    height: auto
+    border-radius: 28px
+
+::ng-deep .fade
+    background: $bg-modal
+    transition: opacity .15s linear
+
+.symbol
+    height: 60px
+    width:65px

@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Roboto Bold;
+  src: url(https://fr.allfont.net/allfont.css?fonts=roboto-bold);
+}
+
+
+.bgBlue {
+  background-color: #0e2e56;
+}
+
+.bgLightGray {
+  background-color: #BEBEBE;
+}
+
+.bgWhiteSmoke {
+  background-color: #f5f5f5;
+}
+
+.textWhite {
+  color: white;
+}
+
+.textGrey {
+  color: #696969;
+}
+
+.textLightGrey {
+  color: #BEBEBE
+}
+
+.textBlue {
+  color: #003834
+}
+
+.textRed {
+    color: #e9505a
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66" height="76" viewBox="0 0 66 76">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="trash-restore" d="M14.9,76a7.1,7.1,0,0,1-7.057-6.68L4.715,19H61.288L58.162,69.32A7.092,7.092,0,0,1,51.107,76ZM2.356,14.25A2.365,2.365,0,0,1,0,11.876V7.125A2.365,2.365,0,0,1,2.356,4.751H20.035l1.386-2.776A3.489,3.489,0,0,1,24.572,0H41.414a3.531,3.531,0,0,1,3.165,1.975l1.386,2.776H63.644A2.365,2.365,0,0,1,66,7.125v4.751a2.365,2.365,0,0,1-2.356,2.374Z" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="trash-restore-2" data-name="trash-restore" transform="translate(0 0)">
+    <g id="Groupe_192" data-name="Groupe 192" transform="translate(0 0)">
+      <path id="trash-restore-3" data-name="trash-restore" d="M14.9,76a7.1,7.1,0,0,1-7.057-6.68L4.715,19H61.288L58.162,69.32A7.092,7.092,0,0,1,51.107,76ZM2.356,14.25A2.365,2.365,0,0,1,0,11.876V7.125A2.365,2.365,0,0,1,2.356,4.751H20.035l1.386-2.776A3.489,3.489,0,0,1,24.572,0H41.414a3.531,3.531,0,0,1,3.165,1.975l1.386,2.776H63.644A2.365,2.365,0,0,1,66,7.125v4.751a2.365,2.365,0,0,1-2.356,2.374Z" transform="translate(0 0)" fill="none"/>
+      <g id="Groupe_de_masques_192" data-name="Groupe de masques 192" clip-path="url(#clip-path)">
+        <g id="_color" data-name="🎨 color" transform="translate(-4.714 0)">
+          <rect id="Color" width="75.429" height="75.429" fill="#ea4f45"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

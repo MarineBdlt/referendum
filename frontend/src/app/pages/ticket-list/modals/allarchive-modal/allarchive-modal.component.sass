@@ -1,0 +1,33 @@
+@import "../../../../../sass_utils/variables"
+
+::ng-deep .modal-dialog 
+    margin-top: 15%
+    width: 42.375em
+
+::ng-deep .modal-content
+    //padding-top: 4.37em   [bug]le padding reste après avoir fermer la modal delete all
+    //padding-bottom: 2.625em
+    display: flex
+    justify-content: center
+    align-items: center
+
+h2
+    color: $dark-blue
+    text-align: center
+
+.btn
+    display: flex
+    justify-content: center
+    margin-top: 2em
+    :nth-child(1)
+        margin-right: 0.5em
+
+button
+    @include rectangle-btn
+    color: $white
+    background-color: $btn-bg-grey
+    width: 7.25em
+ 
+button:hover
+    background-color: $red
+    color: white

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="navigation-back">
+    <a href="/productChoiceForResults"> <img class="go-back" src="../../../assets/images/go-back.svg" alt="flèche navigation retour"> </a>
+  </div>
+  <div class="main">
+    <div class="main-ticket-list">
+      <div class="header">
+        <h2 id="title-page">Résultats des votes OPTeam</h2>
+        <img src="../../../assets/images/logo_opteam.svg" alt="logo Opteam" />
+      </div>
+
+      <div class="scroll_table">
+        <table>
+          <thead>
+            <th>N°</th>
+            <th>Tickets</th>
+            <th>Total des votes</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ticket of tickets">
+              <td>{{ ticket.number_id }}</td>
+              <td>{{ ticket.title }}</td>
+              <td>{{ ticket.vote_amount }} Crédits</td>
+              <button (click)="getListVotes(ticket)">Détails</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="main-user-info">
+      <div class="table-detail">
+        <table>
+          <thead>
+            <th colspan="2">Détail des votes</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vote of current_ticket_votes">
+              <td>{{ vote.company_name }}</td>
+              <td>{{ vote.amount }} Crédits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

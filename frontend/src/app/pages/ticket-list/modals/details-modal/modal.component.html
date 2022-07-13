@@ -1,0 +1,51 @@
+<div id="modal-content" >
+  <div id="modal-header">
+    <div id="number-details">{{ticket.number_id}}</div>
+    <div id="product-details">{{ ticket.product.name | titlecase }}</div>
+  </div>
+  <div class="ticket-details-content">
+    <br>
+    <div id="title-details">{{ticket.title[0].toUpperCase() + ticket.title.slice(1)}}</div><br><br>
+    <!-- Mets majuscule à la première lettre -->
+    <ul class="data">
+      <li id="complexity-details"><span class="text-blue">Complexité : </span>
+        <app-ticket-circle [ticket]="ticket" class="t-info"></app-ticket-circle>
+      </li><br><br>
+      <li id="date-details"><span class="text-blue">Date de création : </span><span
+          class="text-grey">{{ticket.creation_date | date:"d-MM-y"}}</span></li><br><br>
+      <li id="description-details"><span class="text-blue">Description : </span><span
+          class="text-grey">{{ticket.content[0].toUpperCase() + ticket.content.slice(1)}}</span></li>
+      <br><br>
+      <li *ngIf="ticket.depends_of" id="parent-details">
+        <span class="text-blue">Ticket Parent : </span>
+        <span class="text-grey" id="depends_of" (click)="openModalParentService(parentTemplate, ticketParent, ticket.depends_of)"> {{ticketParentTitle}} N° {{ticket.depends_of}}
+        <ng-template #parentTemplate>
+          <app-parent-modal [ticket]="ticketParent[0]"></app-parent-modal>
+        </ng-template>
+      </span>
+      </li>
+
+    </ul>
+  </div>
+  <button type="button" class="close pull-right" class="text-grey" aria-label="Close"
+  (click)="closeModalService()">
+    <span aria-hidden="true">Retour</span>
+  </button>
+
+  <button *ngIf="is_Admin" (click)="openDeleteModalService(deleteTemplate, ticket)">Supprimer</button>
+  <ng-template #deleteTemplate>
+    <app-delete-modal [ticket]="ticket"></app-delete-modal>
+  </ng-template>
+   <button  *ngIf="!ticket.archived && is_Admin;else archivedTrueForPopup;"
+    (click)="openArchiveModalService(archiveTemplate, ticket)">Archiver</button>  
+    <ng-template #archiveTemplate>
+            <app-archive-modal [ticket]="ticket"></app-archive-modal>
+          </ng-template>
+
+     <ng-template #archivedTrueForPopup>
+      <button *ngIf="is_Admin" (click)="openRestoreModalService(restoreTemplate, ticket)">Restaurer</button>
+        <ng-template #restoreTemplate>
+          <app-restore-modal [ticket]="ticket"></app-restore-modal>
+        </ng-template>
+    </ng-template>  
+

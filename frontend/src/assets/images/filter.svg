@@ -1,0 +1,15 @@
+<svg id="filter-2" data-name="filter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87" height="87" viewBox="0 0 87 87">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="filter" d="M82.918,0H4.083A4.081,4.081,0,0,0,1.2,6.962l31.426,31.43V73.406a4.079,4.079,0,0,0,1.739,3.341l13.594,9.512a4.081,4.081,0,0,0,6.417-3.341V38.392L85.8,6.962A4.081,4.081,0,0,0,82.918,0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_772" data-name="Groupe 772">
+    <path id="filter-3" data-name="filter" d="M82.918,0H4.083A4.081,4.081,0,0,0,1.2,6.962l31.426,31.43V73.406a4.079,4.079,0,0,0,1.739,3.341l13.594,9.512a4.081,4.081,0,0,0,6.417-3.341V38.392L85.8,6.962A4.081,4.081,0,0,0,82.918,0Z" fill="none"/>
+    <g id="Groupe_de_masques_772" data-name="Groupe de masques 772" clip-path="url(#clip-path)">
+      <g id="_color" data-name="🎨 color">
+        <rect id="Color" width="87" height="87" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

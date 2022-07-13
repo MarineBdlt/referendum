@@ -1,0 +1,38 @@
+<div id="modal-content">
+  <div id="modal-header">
+    <div id="number-details">{{ticket.number_id}}</div>
+    <div id="product-details">{{ticket.product.name[0].toUpperCase() + ticket.product.name.slice(1)}}</div>
+  </div>
+  <div class="ticket-details-content">
+    <br>
+    <div id="title-details">{{ticket.title[0].toUpperCase() + ticket.title.slice(1)}}</div><br><br>
+    <ul class="data">
+      <li id="complexity-details">
+        <app-ticket-circle [ticket]="ticket" class="t-info"></app-ticket-circle>
+      </li><br><br>
+      <li id="date-details"><span class="text-blue">Date de création : </span><span
+          class="text-grey">{{ticket.creation_date | date:"d-MM-y"}}</span></li><br><br>
+      <li id="description-details"><span class="text-blue">Description : </span><span
+          class="text-grey">{{ticket.content[0].toUpperCase() + ticket.content.slice(1)}}</span></li>
+      <br><br>
+    </ul>
+  </div>
+  <button type="button" class="close pull-right" class="text-grey" aria-label="Close" (click)="closeModalService()">
+    <span aria-hidden="true">Revenir</span>
+  </button>
+  <button (click)="openDeleteModalService(deleteTemplate, ticket)">Supprimer</button>
+  <ng-template #deleteTemplate>
+    <app-delete-modal [ticket]="ticket"></app-delete-modal>
+  </ng-template>
+  <button *ngIf="!ticket.archived;else archivedTrueForPopup;"
+    (click)="openArchiveModalService(archiveTemplate, ticket)">Archiver</button>
+  <ng-template #archiveTemplate>
+    <app-archive-modal [ticket]="ticket"></app-archive-modal>
+  </ng-template>
+
+  <ng-template #archivedTrueForPopup>
+    <button (click)="openRestoreModalService(restoreTemplate, ticket)">Restaurer</button>
+    <ng-template #restoreTemplate>
+      <app-restore-modal [ticket]="ticket"></app-restore-modal>
+    </ng-template>
+  </ng-template>

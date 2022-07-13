@@ -1,0 +1,94 @@
+<div class="app-box">
+
+  <div class="content-box">
+    <form [formGroup]="formBudget">
+      <button (click)="submit()">Valider</button>
+      <div class="container">
+        <div class="title row">
+          <div class="d-flex justify-content-between">
+            <h2 class="titre-page" >Budget </h2>
+          </div>
+        </div>
+      </div>
+      <div class="container-table">
+        <table>
+          <thead>
+            <th>
+              Clients
+            </th>
+            <th>
+              Produit
+            </th>
+            <th>
+              Budget
+            </th>
+            <th>
+              Date départ
+            </th>
+            <th>
+              Date fin
+            </th>
+          </thead>
+          <tbody>
+            <td class="input"> <label for="company_id" class="me-2">Choix de l'organisation</label>
+              <select name="company_id" formControlName="company_id" [(ngModel)]="company_id" class="me-2">
+                <option *ngFor="let company of companies" [value]="company.company_id">
+                  {{company.company_name}}
+                </option>
+              </select></td>
+            <td class="input">
+              <label for="product_id" class="me-2">Choix du produit</label>
+              <select formControlName="product_id" [(ngModel)]="product_id" class="me-2">
+                <option *ngFor="let product of products" [value]="product.product_id">
+                  {{product.name}}
+                </option>
+              </select>
+            </td>
+            <td class="input">
+              <!-- <label for="total_budget">budget</label> -->
+              <input type="text" formControlName="total_budget" [(ngModel)]="total_budget" placeholder="budget">
+            </td>
+            <td class="input">
+              <!-- <label for="start_time">start_time</label> -->
+              <input type="date" formControlName="start_time" [(ngModel)]="start_time">
+            </td>
+            <td class="input">
+              <!-- <label for="end_time">end_time</label> -->
+              <input type="date" formControlName="end_time" [(ngModel)]="end_time">
+            </td>
+            <tr *ngFor="let budget of budgetsDetailList">
+              <td class="content">
+                {{budget.companyName}}
+              </td>
+              <td class="content">
+                {{budget.productName}}
+              <td class="content">
+                {{budget.total_budget}}
+              </td>
+              <td class="content">
+                {{budget.start_time | date:'dd/MM/yyyy' }}
+              </td>
+              <td class="content">
+                {{budget.end_time | date:'dd/MM/yyyy' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-alert">
+        <div *ngIf="confirm" class="alert alert-success text-center" role="alert">
+          Budget ajouté
+        </div>
+        <div *ngIf="warning_budget" class="alert alert-warning text-center" role="alert">
+          Cette compagnie et ce produit ont déjà un budget associé sur cette période
+        </div>
+        <div *ngIf="error_date" class="alert alert-danger text-center" role="alert">
+          Les dates indiquées sont incorrectes
+        </div>
+        <div *ngIf="error" class="alert alert-danger text-center" role="alert">
+          Certains champs sont vides
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

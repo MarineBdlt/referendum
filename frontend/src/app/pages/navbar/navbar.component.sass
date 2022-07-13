@@ -1,0 +1,148 @@
+@import "../../../sass_utils/variables"
+
+
+h1,
+p,
+a
+    color: $white
+
+
+#logoaum
+    width: 1em
+    margin: 0.1em 0.3em 0.1em -0.2em
+
+
+nav
+    position: fixed
+    z-index: 1000
+    height: 100vh
+    display: flex
+    flex-direction: column
+    background-color: $dark-blue
+    padding: 1.75em 0em 1em 0.812em
+
+    .tall_title
+        display: none
+    .collaps,
+    .collaps2,
+    .collaps3
+        display: none
+    #deconnexion_icone
+        display: block
+    .nav_head
+            img
+                display: block
+                height: 26px
+                width: 26px
+                margin-left: -0.15em
+    &:hover
+        /* z-index: 5000 */
+        width: 14.31em
+        #deconnexion_icone
+            display: none
+            height: 4em
+        .nav_head
+            img
+                width: 3.62em
+                height: 3.62em
+            a
+                display: inline
+        .identity
+            display: flex
+            flex-direction: column
+            margin-left: 1em
+            .name
+                margin-top: 1em
+            p
+                font-size: 1em
+                line-height: 0.5em
+        #nav_liste
+            ul
+                li
+                    a
+                        display: inline
+                        margin-left: -2em
+        #deconnexion_btn
+            display: inline
+        .collaps2
+            display: inline
+            position: relative
+        .collaps3
+            display: inline
+            bottom: 4.5em
+            left: 2em
+
+        .tall_title
+            display: inline
+        .little_title
+            display: none
+
+.nav_head
+    height: 4em
+    display: flex
+    margin-top: 1.9em
+
+.nav_title
+    font-size: 2.5em
+    height: 1em
+
+
+.identity
+  display: none
+
+ul
+    img
+        @include icone
+
+#nav_liste,
+    ul
+        padding-left: 0px
+        padding-top: 20px
+        li
+            list-style: none
+            margin-top: 1em
+            a
+                margin-left: 0.62em
+                font-size: 1em
+
+#nav_bottom
+    position: absolute
+    bottom: 1em
+    padding-left: 0
+
+
+#deconnexion_icone
+    height: 24px
+    padding-top: 6px
+    display: none
+
+#deconnexion_btn
+    display: none
+    border: 1px solid $red
+    margin-left: 1.2rem
+    border-radius: $btn-border-radius
+    padding: 0.5rem 2rem
+    a
+        margin-left: 0
+        font-size: 1em
+
+.active
+    background: rgba(245, 245, 245, 0.2)
+
+img
+    margin-left: .5em
+
+li
+    padding: 0.5em
+    margin-left: -0.812em
+
+@media(max-height: 700px)
+    nav
+        height: 800px
+
+    #nav_bottom
+        position: relative
+        margin-top: 1em
+
+.container
+  margin-left: 0

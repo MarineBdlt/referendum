@@ -1,0 +1,354 @@
+@import "../../../sass_utils/variables"
+
+:host
+    width: 100%
+    color: #7B7B7B
+
+// Text & spacing
+body
+    background: #F5F5F5
+h2
+    display: inline-block
+    margin-top: 60px
+    margin-left: 182px
+    color: $dark-blue
+
+.table-title-buttons
+    width: 100%
+    display: flex
+    justify-content: flex-right
+    align-items: center
+
+thead
+    background: $dark-blue
+    color: $white
+    width: 100%
+tbody
+    width: 100%
+tr
+    width:100%
+td
+
+    // width:100%
+span
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    margin: auto
+
+#text-selection
+    margin-left: 5px
+    margin-right: 5px
+    font-size: 12px
+
+#title-list
+    cursor: pointer
+    font-size: 12px
+    margin: 15px
+    margin-left: 10px
+    margin-right: 10px
+    font-size: 12px
+    max-width: 300px
+
+#number-list
+    width: 3.125em
+    min-width: 3.125em
+    font-size: 12px
+    cursor: pointer
+
+#complexity-list
+    margin-right: 17px
+
+.number-complexity
+    display: flex
+    margin-top: 20px
+
+#product-list
+    margin-right: 0
+    padding: 0 0 0 2em
+
+#date-list
+    font-size: 12px
+
+.icone
+    width: 24px
+    height: 21px
+    // float: right
+a
+    text-decoration: none
+    color: $dark-blue
+a:hover
+    background-color: lightgrey
+    text-decoration: none
+    cursor: pointer
+span
+    margin-right: 3px
+    font-size: 12px
+.arrow
+    margin-left: 0.3em
+    width: 10px
+    height: 7px
+tr:nth-child(odd)
+    background: #E8E8E8
+tr:nth-child(even)
+    background: #F1F1F1
+
+//Blocs et contenants
+.container-table
+    max-height: 600px
+    margin-top: 50px
+    width: 100%
+    height: 500px
+
+table
+    width: 100%
+
+th
+    height: 60px
+#div-checkbox-all
+    margin-top: 15px
+    margin-left: 12px
+    margin-right: 3em
+    float: left
+
+// DROPDOWN
+.dropdown
+    position: relative
+    display: inline-block
+    background-color: $dark-blue
+
+.dropdown-content
+    display: none
+    position: absolute
+    background-color: #E6E6E6
+    min-width: 160px
+    padding: 12px 16px 0px 16px
+    // padding-bottom: 0
+    z-index: 1
+.dropdown:hover .dropdown-content
+    display: block
+    top:2.3em
+    font-size: 12px
+    width: 80px
+    border-radius: 10px
+    border: solid $dark-blue 1px
+
+// input
+.checkbox
+    margin-left: 12px
+    margin-right: 12px
+
+#checkbox-head
+    width: 20px
+    height: 20px
+
+.info-left
+    white-space: nowrap
+.info-right
+    white-space: nowrap
+.info-center
+    white-space: nowrap
+
+.btn-dropdown-filter
+    background: $dark-blue
+    color: $white
+    width: 104px
+    height: 34px
+    text-align: left //top, right, bottom, left
+    margin-top: 0.5em
+    border: solid white 1.2px
+    border-radius: 10px
+    
+.archive-restore
+    margin-right: 0.2em
+    background: $dark-blue
+    color: $white
+    margin-top: 1.3em
+    display: inline-block
+button
+    border: solid transparent 1.2px
+    background-color: LIghtGrey
+    border-radius: 10px
+    font-size: 16px
+    text-align: center
+    padding: 0.3em
+    padding-left: 0.7em
+    padding-right: 0.7em
+    margin-right: 1em
+    margin-bottom: 1em
+    float: right
+
+.archive-restore:hover
+    border: solid white 1.2px
+    border-color: #FFFF
+    color: white
+
+.archive-button-list
+    width: 90px
+    background-color: $dark-blue
+    color: white
+    border-radius: 10px
+    font-size: 12px
+    text-align: center
+    padding: 0.3em 0.7em 0.3em 0.7em
+    margin: 1.5em 1em 1em 1.5em
+    // box-shadow: 0 3px 10px gray
+.archive-button-list:hover 
+    background: $red
+.restore-button-list
+    background-color: LightGrey
+    color: $dark-blue
+    border-radius: 10px
+    text-align: center
+    padding: 0.3em 0.7em auto 0.7em //top, right, bottom, left
+    box-shadow: inset 3px 3px 5px gray
+    width: 90px
+    font-size: 12px
+    margin: 1.5em 1em 1em 1.5em
+
+.btn-icone-list
+    margin: 0.8em 0em 0.8em 0em
+    background: transparent
+    border: solid transparent 2px
+
+.btn-delete:hover
+    border: solid $red 2px
+
+.btn-edit:hover
+    border: solid $dark-blue 2px
+
+.img-delete
+    width: 19px
+    height: 21px
+
+.img-edit 
+    width: 22px
+    height: 24px
+
+.img-filter
+    width: 22px
+    height: 22px
+    margin-right: 5px
+
+// MODAL DETAIL
+.modal
+    top: 6em
+ul
+    list-style: none
+::ng-deep .modal-dialog
+    margin-left: auto
+    margin-right: auto
+    padding-top:5.5em
+    padding-right:1.5em
+    border-radius: 28px
+    min-width: 41em
+    height: auto
+::ng-deep .modal-content
+    height: auto
+    border-radius: 28px
+#modal-header
+    padding: 1.2em
+    display: flex
+    font-weight: bold
+    justify-content: space-between
+    background-color: #071c33
+    color: white
+    border-radius: 28px 28px 0px 0px
+#title-details
+    color: #003844
+    font-size: 1.5em
+    text-align: center
+    margin-top: 0.3em
+
+#description-details
+    height: auto
+    margin-right: 1em
+.title-box
+    color: #003844
+    font-size: 1.5em
+    text-align: center
+#complexity-details
+    display: flex
+
+// MODAL ARCHIVED & RESTORE
+.box
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    top:0
+    left:0
+    width: 100%
+    height: 100%
+    background: rgba(0,0 ,0 ,0.8 )
+    color: white
+    font-size: 1.5em
+// MODAL ARCHIVED
+.archiveButton
+    width: 110px
+    background-color: $dark-blue
+    color: white
+    border-radius: 10px
+    font-size: 16px
+    text-align: center
+    padding: 0.3em 0.7em 0.3em 0.7em
+    margin: auto 1em 1em auto
+    box-shadow: 0 3px 10px gray
+.displayMessageArchived
+    background-color: white
+    display: inline-block
+    border: 1px solid white
+    color: grey
+    padding: 1em
+    border-radius: 28px
+// MODAL RESTORE
+.restoreButton
+    width: 110px
+    background-color: LightGrey
+    color: $dark-blue
+    border-radius: 10px
+    font-size: 16px
+    text-align: center
+    padding: 0.3em 0.7em auto 0.7em
+    margin: auto 1em 1em auto
+    box-shadow: inset 3px 3px 5px gray
+.displayMessageRestored
+    background-color: white
+    display: inline-block
+    border: 1px solid white
+    color: grey
+    padding: 1em
+    border-radius: 28px
+// MODAL DELETE
+.boxDelete
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    top:0
+    left:0
+    width: 100%
+    height: 100%
+    background: rgba(0,0 ,0 ,0.8 )
+    color: white
+    font-size: 1.5em
+.displayMessageDelete
+    background-color: white
+    display: inline-block
+    border: 1px solid white
+    color: grey
+    padding: 1em
+    border-radius: 28px
+
+.app-box
+  display: flex
+
+.content-box
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  margin-left: 7em
+  padding-left: 110px
+  padding-right: 100px
+  width: 100%
+  

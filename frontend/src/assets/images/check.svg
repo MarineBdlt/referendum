@@ -1,0 +1,15 @@
+<svg id="check-2" data-name="check" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98.951" height="73.789" viewBox="0 0 98.951 73.789">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="check" d="M33.608,72.34,1.449,40.181a4.948,4.948,0,0,1,0-7l7-7a4.947,4.947,0,0,1,7,0L37.107,47.85l46.4-46.4a4.948,4.948,0,0,1,7,0l7,7a4.948,4.948,0,0,1,0,7L40.6,72.34a4.948,4.948,0,0,1-7,0Z" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_440" data-name="Groupe 440" transform="translate(0 -3.051)">
+    <path id="check-3" data-name="check" d="M33.608,72.34,1.449,40.181a4.948,4.948,0,0,1,0-7l7-7a4.947,4.947,0,0,1,7,0L37.107,47.85l46.4-46.4a4.948,4.948,0,0,1,7,0l7,7a4.948,4.948,0,0,1,0,7L40.6,72.34a4.948,4.948,0,0,1-7,0Z" transform="translate(0 3.051)" fill="none"/>
+    <g id="Groupe_de_masques_440" data-name="Groupe de masques 440" transform="translate(0 3.051)" clip-path="url(#clip-path)">
+      <g id="_color" data-name="🎨 color" transform="translate(0 -12.581)">
+        <rect id="Color" width="98.951" height="98.951" fill="#01ae00"/>
+      </g>
+    </g>
+  </g>
+</svg>

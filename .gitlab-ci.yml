@@ -1,0 +1,58 @@
+stages:
+  - build
+  - deploy
+
+
+.build_only: &build_only
+  only:
+    refs:
+      - production@jurassicpark/jurassicpark
+      - stable@jurassicpark/jurassicpark
+
+.prod_only: &prod_only
+  only:
+    refs:
+      - production@jurassicpark/jurassicpark
+
+.preprod_only: &preprod_only
+  only:
+    refs:
+      - stable@jurassicpark/jurassicpark
+
+.dockerlogin: &dockerlogin
+  before_script:
+    - echo "Connecting to Docker Registry:$URL_REGISTRY"
+    - docker login https://$URL_REGISTRY:$PORT_REGISTRY -u $USERNAME_REGISTRY -p $PASSWORD_REGISTRY
+
+    
+build:jurassic:
+  stage: build
+  extends:
+    - .dockerlogin
+    - .build_only
+  tags:
+    - shell-plus-docker
+    - ana-macon-host
+  script:
+    - ./setup.sh build_jurassic push_jurassic
+
+preprod-deploy:jurassic:
+  stage: deploy
+  extends:
+    - .dockerlogin
+    - .preprod_only
+  tags:
+    - aum-preprod-jurassic
+  script:
+    - ./setup.sh pull_jurassic tag_images untag_images start_jurassic
+
+prod-deploy:jurassic:
+  stage: deploy
+  when: manual
+  extends:
+    - .dockerlogin
+    - .prod_only
+  tags:
+    - aum-prod-jurassic
+  script:
+    - ./setup.sh pull_jurassic tag_images untag_images start_jurassic

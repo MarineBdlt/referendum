@@ -1,0 +1,64 @@
+<nav (mouseover)="changeCollaps=false" (mouseout)="changeCollaps=true">
+
+<div class="nav_title">
+    <img id="logoaum" class="little_title" src="../../../assets/images/logoAum.png" alt="logo AUM">
+    <h1 class="tall_title">Referend'AUM</h1>
+</div>
+
+<div class="nav_head">
+    <img src="../../../assets/images/profil.svg" alt="avatar" [ngClass]="{'collaps' : changeCollaps==true}">
+    <div class="identity" [ngClass]="{'collaps' : changeCollaps==true}">
+        <p class="name">{{userName[0].toUpperCase() + userName.slice(1)}}</p>
+        <p class="company">{{companyName}}</p>
+        <p *ngIf = "isAdmin" class="role">Administrateur</p>
+    </div>
+</div>
+
+<ul id="nav_liste">
+    <li routerLinkActive="active">
+        <img src="../../../assets/images/vote-nav.svg" alt="icon utilisateur">
+        <div class="collaps2">
+        <a routerLink="/productChoice" [ngClass]="{'collaps' : changeCollaps==true}">Vote</a></div>
+    </li>
+    <li *ngIf="isAdmin" routerLinkActive="active" routerLink="ticketList">
+        <img src="../../../assets/images/ticket-list-nav.svg" alt="icon vote" id="icon-vote">
+        <div class="collaps2">
+        <a routerLink="/ticketList" [ngClass]="{'collaps' : changeCollaps==true}">Liste de tickets</a>
+        </div>
+    </li>
+    <li *ngIf="isAdmin" routerLinkActive="active" routerLink="form">
+        <img src="../../../assets/images/edit 1.svg" alt="icon création ticket">
+        <div class="collaps2">
+        <a routerLink="/form" [ngClass]="{'collaps' : changeCollaps==true}">Création ticket</a></div>
+    </li>
+    <li *ngIf="isAdmin" routerLinkActive="active">
+      <img src="../../../assets/images/user-edit.svg" alt="icon utilisateur">
+      <div class="collaps2">
+      <a routerLink="/signup" [ngClass]="{'collaps' : changeCollaps==true}">Création utilisateur</a></div>
+    </li>
+    <li *ngIf="isAdmin" routerLinkActive="active" routerLink="budget">
+        <img src="../../../assets/images/budget-nav.svg" alt="icon budget">
+        <div class="collaps2">
+        <a routerLink="/budget" [ngClass]="{'collaps' : changeCollaps==true}">Budget</a></div>
+    </li>
+    <li *ngIf="isAdmin" outerLinkActive="active" routerLink="productChoiceForResults">
+        <img src="../../../assets/images/results-nav.svg" alt="icon vote">
+        <div class="collaps2">
+        <a routerLink="/productChoiceForResults" [ngClass]="{'collaps' : changeCollaps==true}">Résultat des votes</a></div>
+
+    </li>
+
+</ul>
+<ul id="nav_bottom">
+    <li routerLinkActive="active">
+
+        <img src="../../../assets/images/settings.svg" alt="icon parameters" routerLink="parameters">
+        <div class="collaps3"><a routerLink="change-password" [ngClass]="{'collaps' : changeCollaps==true}">Mon compte</a></div>
+    </li>
+    <li>
+        <img src="../../../assets/images/sign-out-alt.svg" alt="icon déconnexion" id="deconnexion_icone">
+        <div id="deconnexion_btn" [ngClass]="{'collaps' : changeCollaps==true}">
+        <a routerLink="/" (click)="logout()">Déconnexion</a></div>
+    </li>
+</ul>
+</nav>

@@ -1,0 +1,15 @@
+<svg id="vote-yea-2" data-name="vote-yea" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91" height="63.701" viewBox="0 0 91 63.701">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="vote-yea" d="M4.549,63.7A4.546,4.546,0,0,1,0,59.148V45.5A4.545,4.545,0,0,1,4.549,40.95h9.1v9.1H10.466A1.268,1.268,0,0,0,9.1,51.187v2.276A1.268,1.268,0,0,0,10.466,54.6H80.534A1.268,1.268,0,0,0,81.9,53.463V51.187a1.268,1.268,0,0,0-1.365-1.136H77.35v-9.1h9.1A4.546,4.546,0,0,1,91,45.5v13.65A4.547,4.547,0,0,1,86.448,63.7ZM18.2,50.051V4.593A4.6,4.6,0,0,1,22.806,0h45.4A4.59,4.59,0,0,1,72.8,4.593V50.051Z" transform="translate(0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_900" data-name="Groupe 900" transform="translate(0)">
+    <path id="vote-yea-3" data-name="vote-yea" d="M4.549,63.7A4.546,4.546,0,0,1,0,59.148V45.5A4.545,4.545,0,0,1,4.549,40.95h9.1v9.1H10.466A1.268,1.268,0,0,0,9.1,51.187v2.276A1.268,1.268,0,0,0,10.466,54.6H80.534A1.268,1.268,0,0,0,81.9,53.463V51.187a1.268,1.268,0,0,0-1.365-1.136H77.35v-9.1h9.1A4.546,4.546,0,0,1,91,45.5v13.65A4.547,4.547,0,0,1,86.448,63.7ZM18.2,50.051V4.593A4.6,4.6,0,0,1,22.806,0h45.4A4.59,4.59,0,0,1,72.8,4.593V50.051Z" transform="translate(0)" fill="none"/>
+    <g id="Groupe_de_masques_900" data-name="Groupe de masques 900" clip-path="url(#clip-path)">
+      <g id="_color" data-name="🎨 color" transform="translate(0 -13.65)">
+        <rect id="Color" width="90.999" height="90.999" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<h2 class="titre-page register-title">Ajouter un utilisateur</h2>
+<p class="text-grey register-p-title">Créer un utilisateur et l'ajouter à ce site.</p>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()"class="col-3">
+            <div class="form-group">
+              <div class="d-flex align-items-center mb-3 row justify-content-center">
+                <label for="user_email" class="col-2">Email</label>
+                <input type="text" formControlName="user_email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.user_email.errors }" placeholder="Adresse de messagerie" />
+                <div *ngIf="submitted && f.user_email.errors" class="invalid-feedback text-center">
+                  <p *ngIf="f.user_email.errors.required">L'email est requis</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="d-flex align-items-center mb-3 row justify-content-center">
+                <label for="user_name" class="col-2">Nom</label>
+                <input type="text" formControlName="user_name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.user_name.errors }" placeholder="Nom" />
+                <div *ngIf="submitted && f.user_name.errors" class="invalid-feedback text-center">
+                  <p *ngIf="f.user_name.errors.required">Le nom est requis</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <div class="d-flex align-items-center  row justify-content-center">
+                <label for="user_password" class="col-2">Mot de passe</label>
+                <input type="text" formControlName="user_password" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.user_password.errors }" placeholder="Mot de passe" />
+              </div>
+              <div *ngIf="submitted && f.user_password.errors" class="invalid-feedback d-flex justify-content-center">
+                <p *ngIf="f.user_password.errors.required" class="ms-5">Le mot de passe est requis</p>
+                <p *ngIf="f.user_password.errors.minlength" class="minlength">Le mot de passe doit contenir au moins 6 caractères</p>
+              </div>
+            </div>
+
+            <div class="form-group d-flex align-items-center mb-3 row justify-content-center" >
+              <label class="col-2">Organisation</label>
+              <select formControlName="company_id" name="selectedCompany">
+                <option *ngFor="let company of companies" [value]="company.company_id">
+                  {{company.company_name}}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group col-13 d-flex justify-content-end">
+              <button [disabled]="loading" class="submit">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Ajouter un utilisateur
+              </button>
+            </div>
+          </form>
