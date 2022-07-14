@@ -1,17 +1,17 @@
 <div id="modal-content">
 
-    <tbody>   
+    <tbody>
         <div class="ticket-details-content">
           <h2>Etes-vous sûr de vouloir restaurer ces tickets ? </h2>
-  
+
           <tr class="bg-light-grey" *ngFor="let ticket of ticket">
 
               <li *ngIf="ticket.checked">{{ ticket.title }}</li>
 
           <tr>
         </div>
+        <div style="display:flex; justify-content:space-evenly; ">
           <button (click)="closeModalService()">Non</button>
-        <div>
           <button (click)="multipleRestore()">Oui</button>
         </div>
     </tbody>
